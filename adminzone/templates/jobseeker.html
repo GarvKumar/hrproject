@@ -1,0 +1,32 @@
+{% extends "aparent.html" %}
+{% block body %}
+<h1 style="color:blue; text-align:center; ">
+    View All Job Seeker
+</h1>
+<table border="1" style="margin:0 auto; width:90%;">
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Contact No</th>
+        <th>Email Address</th>
+        <th>Qualification</th>
+        <th>Experience</th>
+        <th>Key Skills</th>
+        <th>Registration Date</th>
+    </tr>
+    {% for jsk in js %}
+    <tr>
+        <td>{{jsk.name}}</td>
+        <td>{{jsk.gender}}</td>
+        <td>{{jsk.address}}</td>
+        <td>{{jsk.contactno}}</td>
+        <td>{{jsk.emailaddress}}</td>
+        <td>{{jsk.qualification}}</td>
+        <td>{{jsk.experience}}</td>
+        <td>{{jsk.keyskills}}</td>
+        <td>{{jsk.regdate}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends "aparent.html" %}
+{% block body %}
+<h1 style="color:blue; text-align:center; ">
+    Add Notification
+</h1>
+{% if msg %}
+<p style="color:green;text-align:center;">{{msg}}</p>
+{% endif %}
+<form action="{% url 'adminzone:add' %}" method="post">
+    {% csrf_token %}
+    <table style="margin:0 auto;width:50%">
+        <tr>
+            <td>Enter Notification Text</td>
+            <td>
+                <textarea name="notificationtext"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Add"/>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock body %}

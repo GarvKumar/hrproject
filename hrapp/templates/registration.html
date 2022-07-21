@@ -1,0 +1,69 @@
+{% extends "parent.html" %}
+{% block main %}
+<h1 style="color:blue;text-align:center;">
+    Job Seeker Registration
+</h1>
+{% if msg %}
+<p style="color:blue;text-align:center;">{{msg}}</p>
+{% endif %}
+<form action="{% url 'regcode' %}" method="post">
+    {% csrf_token %}
+    <table style="margin:0 auto;width:50%;">
+      <tr>
+          <td>Enter Your Name</td>
+          <td>
+              <input type="text" name="name">
+          </td>
+      </tr>
+        <tr>
+            <td>Select Your Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Address</td>
+            <td>
+                <textarea name="address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter ContactNo.(Unique)</td>
+            <td>
+                <input type="number" name="contactno"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Email Address</td>
+            <td>
+                <input type="email" name="emailaddress"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Your Qualification</td>
+            <td>
+                <input type="text" name="qualification"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Your Experience (In Years)</td>
+            <td>
+                <input type="number" name="experience"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Your Key Skills</td>
+            <td>
+                <textarea name="keyskills"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Register"/>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock main %}

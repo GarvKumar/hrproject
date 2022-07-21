@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Digital HR</title>
+    <style>
+        #outer
+        { width:1000px;
+          height:auto;
+          min-height:1000px;
+          /*border:1px solid white;*/
+          margin:0 auto;
+        }
+        #header
+        {
+         width:1000px;
+         height:150px;
+        }
+          #logo
+        {
+         width:150px;
+         height:150px;
+         background-color:pink;
+         float:left;
+        }
+        #banner
+        {
+         width:850px;
+         height:150px;
+         background-color:navy;
+         float:right;
+         text-align:center;
+         font-size:80px;
+         color:white;
+         line-height:150px;
+        }
+        #menu
+        {
+         width:1000px;
+         height:50px;
+         background-color:white;
+         margin-top:5px;
+         border:1px solid white;
+        }
+        #menu ul
+        {
+         list-style-type:none;
+        }
+        #menu ul li
+        {
+         display:inline;
+        }
+        #menu ul li a
+        {
+         font-size:20px;
+         padding:20px;
+         text-decoration:none;
+         color:black;
+        }
+        #menu ul li a:hover
+        {
+         color:red;
+        }
+        #main
+        {
+         width:1000px;
+         min-height:700px;
+         height:auto;
+         background-color:white;
+         margin-top:5px;
+         border:1px solid white;
+        }
+        #footer
+        {
+         width:1000px;
+         height:85px;
+         margin-top:5px;
+        }
+        #lfooter
+        {
+         width:500px;
+         height:85px;
+         background-color:black;
+         float:left;
+         color:white;
+         text-align:center;
+         line-height:85px;
+         font-size:30px;
+        }
+        #rfooter
+        {
+         width:500px;
+         height:85px;
+         background-color:navy;
+         float:right;
+         color:white;
+         text-align:center;
+         line-height:85px;
+         font-size:30px;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+      <div id="outer">
+          <div id="header">
+              <div id="logo">
+                  <img src="{% static 'images/logos.png' %}" width="150" height="150"/>
+              </div>
+              <div id="banner">
+                  Welcome to admin zone.
+              </div>
+          </div>
+          <div id="menu">
+              <ul>
+                  <li><a href="{% url 'adminzone:adminhome' %}">Admin Home</a></li>
+                  <li><a href="{% url 'adminzone:jobseeker' %}">Job Seeker</a></li>
+                  <li><a href="{% url 'adminzone:enquiries' %}">Enquiries</a></li>
+                  <li><a href="{% url 'adminzone:changepassword' %}">Change Password</a></li>
+                  <li><a href="{% url 'adminzone:logout' %}">Logout</a></li>
+              </ul>
+          </div>
+          <div id="main">
+              {% block body %}
+              {% endblock body %}
+          </div>
+          <div id="footer">
+              <div id="lfooter">Copyright &copy; to Digital HR </div>
+              <div id="rfooter">Developed By:-Garv Kumar</div>
+          </div>
+      </div>
+</body>
+</html>
